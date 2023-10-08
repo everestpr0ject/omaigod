@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Página Animada</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #texto {
+            font-size: 48px;
+            color: rgb(255, 0, 0);
+            animation: animacion 1s infinite alternate;
+            cursor: pointer;
+        }
+        @keyframes animacion {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="texto" onclick="mostrarMensaje()">MICA SOS UNA CHATA</div>
+    <script>
+    	cambiarColorTexto();
+    	        function cambiarColorTexto() {
+            const texto = document.getElementById("texto");
+            const colores = ["red", "green", "blue", "yellow", "orange", "purple"];
+            let indiceColor = 0;
+
+            setInterval(function () {
+                texto.style.color = colores[indiceColor];
+                indiceColor = (indiceColor + 1) % colores.length;
+            }, 100);
+        }
+
+    </script>
+    <script>
+        function mostrarMensaje() {
+            setTimeout(function () {
+                alert("Date cuenta amiga");
+                window.location.href = "https://www.ejemplo.com";
+            }, 100);
+        }
+    </script>
+</body>
+</html>
